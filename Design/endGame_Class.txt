@@ -1,0 +1,10 @@
+
+package loonyquiz
+
+public static void endGame()
+{
+	if(Global.lives == 0)
+	{
+		// Load start screen
+	}
+}
