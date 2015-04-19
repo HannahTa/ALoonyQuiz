@@ -5,6 +5,7 @@
  */
 package loonyquiz;
 
+import java.awt.Color;
 import javax.swing.JButton;
 
 /**
@@ -20,6 +21,7 @@ public class QuizScreen extends javax.swing.JFrame
     public QuizScreen()
     {
         initComponents();
+        getContentPane().setBackground(Color.WHITE);
         butAOne.setText(Global.a);
         butATwo.setText(Global.b);
         butAThree.setText(Global.c);
@@ -28,6 +30,7 @@ public class QuizScreen extends javax.swing.JFrame
         LabQue.setLineWrap(true);
         LabQue.setEditable(false);
         LabQue.setText(Global.question);
+        //runTime();
     }
 
     /**
@@ -224,6 +227,37 @@ public class QuizScreen extends javax.swing.JFrame
             MainScreen ms = new MainScreen();
             ms.setVisible(true);
             this.dispose();// Load start screen
+        }
+    }
+    
+    public void runTime()
+    {        
+        Time.startTimer();
+        int eTimer = 10;
+        long timer = Time.getTimeInMills();
+        long measureTime1, measureTime2;
+
+        long time = (eTimer * 1000); //There are 1000 milliseconds to a second 
+        measureTime1 = timer;  // For measuring a second
+        measureTime2 = timer;  // For measuring the ten seconds
+        
+        while(eTimer != 0)
+        {
+            labTimer.setText(String.valueOf(eTimer));
+            timer = Time.getTimeInMills();
+            if(timer >= (measureTime2 + 1000))  // Checks how long a second has passed
+            {
+                eTimer--;
+                // Edit GUI Timer 
+                measureTime2 = timer;
+            }
+            if(timer >= (measureTime1 + time)) // Checks if eTimer (10 seconds) has passed
+            {
+                //Timer is done, return 5 (Because user ran out of time)
+				
+				// questionAnswered(5);   This is a method which checks if the answer was right
+              
+            }
         }
     }
     

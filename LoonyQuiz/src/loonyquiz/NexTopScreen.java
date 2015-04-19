@@ -5,6 +5,8 @@
  */
 package loonyquiz;
 
+import java.awt.Color;
+
 /**
  *
  * @author Hannah
@@ -17,11 +19,20 @@ public class NexTopScreen extends javax.swing.JFrame
     public NexTopScreen()
     {
         initComponents();
+        getContentPane().setBackground(Color.WHITE);
+        if(Global.correct.equals("Correct!"))
+        {
+            labCorrect.setForeground(Color.GREEN);
+        }
+        else
+        {
+            labCorrect.setForeground(Color.red);
+        }
         Question.topicSelect();
         labCorrect.setText(Global.correct);
         butTopOne.setText(Global.topic1);
         butTopTwo.setText(Global.topic2);
-        labLives.setText(String.valueOf(Global.lives));
+        labLives.setText("Lives: " + String.valueOf(Global.lives));
     }
 
     /**

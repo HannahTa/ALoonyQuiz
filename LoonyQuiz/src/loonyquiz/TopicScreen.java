@@ -5,6 +5,7 @@
  */
 package loonyquiz;
 
+import java.awt.Color;
 import javax.swing.JButton;
 
 /**
@@ -20,6 +21,7 @@ public class TopicScreen extends javax.swing.JFrame
     public TopicScreen()
     {
         initComponents();
+        getContentPane().setBackground(Color.WHITE);
         Question.topicSelect();
         butTopOne.setText(Global.topic1);
         butTopTwo.setText(Global.topic2);

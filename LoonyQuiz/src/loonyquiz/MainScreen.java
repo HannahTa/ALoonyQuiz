@@ -5,6 +5,8 @@
  */
 package loonyquiz;
 
+import java.awt.Color;
+
 /**
  *
  * @author Hannah
@@ -18,13 +20,15 @@ public class MainScreen extends javax.swing.JFrame
     public MainScreen()
     {
         initComponents();
+        getContentPane().setBackground(Color.WHITE);
+        butStart.setBackground(Color.ORANGE);
         if(Global.lives == 0)
         {
             labLoonQuiz.setText("Game Over!");
         }
         else
         {
-            labLoonQuiz.setText("The Loony Quiz");
+            labLoonQuiz.setText("Loony Quiz");
         }
         
     }
@@ -41,6 +45,8 @@ public class MainScreen extends javax.swing.JFrame
 
         labLoonQuiz = new javax.swing.JLabel();
         butStart = new javax.swing.JButton();
+        butHiScore = new javax.swing.JButton();
+        butExit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Main");
@@ -63,27 +69,58 @@ public class MainScreen extends javax.swing.JFrame
             }
         });
 
+        butHiScore.setText("Highscores");
+        butHiScore.setMaximumSize(new java.awt.Dimension(125, 65));
+        butHiScore.setMinimumSize(new java.awt.Dimension(125, 65));
+        butHiScore.setPreferredSize(new java.awt.Dimension(125, 65));
+        butHiScore.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                butHiScoreActionPerformed(evt);
+            }
+        });
+
+        butExit.setText("Exit");
+        butExit.setMaximumSize(new java.awt.Dimension(125, 65));
+        butExit.setMinimumSize(new java.awt.Dimension(125, 65));
+        butExit.setPreferredSize(new java.awt.Dimension(125, 65));
+        butExit.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                butExitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(73, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(labLoonQuiz)
                 .addGap(72, 72, 72))
             .addGroup(layout.createSequentialGroup()
                 .addGap(126, 126, 126)
-                .addComponent(butStart, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(butExit, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(butHiScore, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(butStart, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(127, 127, 127))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(57, Short.MAX_VALUE)
                 .addComponent(labLoonQuiz)
-                .addGap(106, 106, 106)
+                .addGap(84, 84, 84)
                 .addComponent(butStart, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(212, 212, 212))
+                .addGap(18, 18, 18)
+                .addComponent(butHiScore, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(butExit, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64))
         );
 
         pack();
@@ -97,6 +134,17 @@ public class MainScreen extends javax.swing.JFrame
         ts.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_butStartActionPerformed
+
+    private void butHiScoreActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butHiScoreActionPerformed
+    {//GEN-HEADEREND:event_butHiScoreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_butHiScoreActionPerformed
+
+    private void butExitActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butExitActionPerformed
+    {//GEN-HEADEREND:event_butExitActionPerformed
+        //Exit
+        this.dispose();
+    }//GEN-LAST:event_butExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -144,6 +192,8 @@ public class MainScreen extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton butExit;
+    private javax.swing.JButton butHiScore;
     private javax.swing.JButton butStart;
     private javax.swing.JLabel labLoonQuiz;
     // End of variables declaration//GEN-END:variables
