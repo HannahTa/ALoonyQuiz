@@ -9,13 +9,13 @@ package loonyquiz;
  *
  * @author Hannah
  */
-public class TopicScreen extends javax.swing.JFrame
+public class NexTopScreen extends javax.swing.JFrame
 {
 
     /**
-     * Creates new form TopicScreen
+     * Creates new form NexTopScreen
      */
-    public TopicScreen()
+    public NexTopScreen()
     {
         initComponents();
     }
@@ -30,28 +30,24 @@ public class TopicScreen extends javax.swing.JFrame
     private void initComponents()
     {
 
-        butTopOne = new javax.swing.JButton();
+        labCorrect = new javax.swing.JLabel();
+        labLives = new javax.swing.JLabel();
         butTopTwo = new javax.swing.JButton();
-        labPickTop = new javax.swing.JLabel();
-        butBack = new javax.swing.JButton();
+        butTopOne = new javax.swing.JButton();
+        labNextTop = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Topic");
+        setTitle("NexTop");
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(380, 500));
         setMinimumSize(new java.awt.Dimension(380, 500));
+        setPreferredSize(new java.awt.Dimension(380, 500));
 
-        butTopOne.setText("Topic1");
-        butTopOne.setMaximumSize(new java.awt.Dimension(125, 65));
-        butTopOne.setMinimumSize(new java.awt.Dimension(125, 65));
-        butTopOne.setPreferredSize(new java.awt.Dimension(125, 65));
-        butTopOne.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
-                butTopOneActionPerformed(evt);
-            }
-        });
+        labCorrect.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        labCorrect.setText("Correct?");
+
+        labLives.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        labLives.setText("LivesLeft");
 
         butTopTwo.setText("Topic2");
         butTopTwo.setMaximumSize(new java.awt.Dimension(125, 65));
@@ -65,20 +61,20 @@ public class TopicScreen extends javax.swing.JFrame
             }
         });
 
-        labPickTop.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
-        labPickTop.setText("Pick a Topic");
-
-        butBack.setText("Back");
-        butBack.setMaximumSize(new java.awt.Dimension(125, 65));
-        butBack.setMinimumSize(new java.awt.Dimension(125, 65));
-        butBack.setPreferredSize(new java.awt.Dimension(125, 65));
-        butBack.addActionListener(new java.awt.event.ActionListener()
+        butTopOne.setText("Topic1");
+        butTopOne.setMaximumSize(new java.awt.Dimension(125, 65));
+        butTopOne.setMinimumSize(new java.awt.Dimension(125, 65));
+        butTopOne.setPreferredSize(new java.awt.Dimension(125, 65));
+        butTopOne.addActionListener(new java.awt.event.ActionListener()
         {
             public void actionPerformed(java.awt.event.ActionEvent evt)
             {
-                butBackActionPerformed(evt);
+                butTopOneActionPerformed(evt);
             }
         });
+
+        labNextTop.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        labNextTop.setText("Pick Next Topic");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,41 +88,40 @@ public class TopicScreen extends javax.swing.JFrame
                 .addGap(41, 41, 41))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(butBack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(125, 125, 125))
+                .addComponent(labNextTop)
+                .addGap(109, 109, 109))
             .addGroup(layout.createSequentialGroup()
-                .addGap(95, 95, 95)
-                .addComponent(labPickTop)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(143, 143, 143)
+                        .addComponent(labLives))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(123, 123, 123)
+                        .addComponent(labCorrect)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(labPickTop)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(58, 58, 58)
+                .addComponent(labCorrect)
+                .addGap(45, 45, 45)
+                .addComponent(labNextTop)
+                .addGap(47, 47, 47)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butTopOne, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(butTopTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(120, 120, 120)
-                .addComponent(butBack, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54))
+                .addGap(72, 72, 72)
+                .addComponent(labLives)
+                .addContainerGap(109, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void butBackActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butBackActionPerformed
-    {//GEN-HEADEREND:event_butBackActionPerformed
-        // Close form
-        MainScreen ms = new MainScreen();
-        ms.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_butBackActionPerformed
-
     private void butTopOneActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butTopOneActionPerformed
     {//GEN-HEADEREND:event_butTopOneActionPerformed
-        // Load QuizScreen with topic chosen
+        // Load QuizScreen with topix chosen
         QuizScreen qs = new QuizScreen();
         qs.setVisible(true);
         this.dispose();
@@ -162,16 +157,16 @@ public class TopicScreen extends javax.swing.JFrame
             }
         } catch (ClassNotFoundException ex)
         {
-            java.util.logging.Logger.getLogger(TopicScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NexTopScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex)
         {
-            java.util.logging.Logger.getLogger(TopicScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NexTopScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex)
         {
-            java.util.logging.Logger.getLogger(TopicScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NexTopScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex)
         {
-            java.util.logging.Logger.getLogger(TopicScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NexTopScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -180,15 +175,16 @@ public class TopicScreen extends javax.swing.JFrame
         {
             public void run()
             {
-                new TopicScreen().setVisible(true);
+                new NexTopScreen().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton butBack;
     private javax.swing.JButton butTopOne;
     private javax.swing.JButton butTopTwo;
-    private javax.swing.JLabel labPickTop;
+    private javax.swing.JLabel labCorrect;
+    private javax.swing.JLabel labLives;
+    private javax.swing.JLabel labNextTop;
     // End of variables declaration//GEN-END:variables
 }

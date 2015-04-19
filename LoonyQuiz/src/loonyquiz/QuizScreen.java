@@ -30,26 +30,147 @@ public class QuizScreen extends javax.swing.JFrame
     private void initComponents()
     {
 
+        labTimer = new javax.swing.JLabel();
+        butAOne = new javax.swing.JButton();
+        butATwo = new javax.swing.JButton();
+        butAThree = new javax.swing.JButton();
+        butAfour = new javax.swing.JButton();
+        labQue = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Quiz");
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(380, 500));
         setMinimumSize(new java.awt.Dimension(380, 500));
-        setPreferredSize(new java.awt.Dimension(380, 500));
+
+        labTimer.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
+        labTimer.setText("Timer");
+
+        butAOne.setText("A1");
+        butAOne.setMaximumSize(new java.awt.Dimension(125, 65));
+        butAOne.setMinimumSize(new java.awt.Dimension(125, 65));
+        butAOne.setPreferredSize(new java.awt.Dimension(125, 65));
+        butAOne.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                butAOneActionPerformed(evt);
+            }
+        });
+
+        butATwo.setText("A2");
+        butATwo.setMaximumSize(new java.awt.Dimension(125, 65));
+        butATwo.setMinimumSize(new java.awt.Dimension(125, 65));
+        butATwo.setPreferredSize(new java.awt.Dimension(125, 65));
+        butATwo.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                butATwoActionPerformed(evt);
+            }
+        });
+
+        butAThree.setText("A3");
+        butAThree.setMaximumSize(new java.awt.Dimension(125, 65));
+        butAThree.setMinimumSize(new java.awt.Dimension(125, 65));
+        butAThree.setPreferredSize(new java.awt.Dimension(125, 65));
+        butAThree.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                butAThreeActionPerformed(evt);
+            }
+        });
+
+        butAfour.setText("A4");
+        butAfour.setMaximumSize(new java.awt.Dimension(125, 65));
+        butAfour.setMinimumSize(new java.awt.Dimension(125, 65));
+        butAfour.setPreferredSize(new java.awt.Dimension(125, 65));
+        butAfour.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                butAfourActionPerformed(evt);
+            }
+        });
+
+        labQue.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        labQue.setText("Question");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 380, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(144, 144, 144)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labQue)
+                            .addComponent(labTimer)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(butAOne, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(butAThree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(46, 46, 46)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(butATwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(butAfour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addComponent(labTimer)
+                .addGap(33, 33, 33)
+                .addComponent(labQue)
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(butAOne, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(butATwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(butAThree, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(butAfour, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(117, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void butAOneActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butAOneActionPerformed
+    {//GEN-HEADEREND:event_butAOneActionPerformed
+        // Load NexTopScreen with topix chosen
+        NexTopScreen tps = new NexTopScreen();
+        tps.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_butAOneActionPerformed
+
+    private void butATwoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butATwoActionPerformed
+    {//GEN-HEADEREND:event_butATwoActionPerformed
+        // Load NexTopScreen with topix chosen
+        NexTopScreen tps = new NexTopScreen();
+        tps.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_butATwoActionPerformed
+
+    private void butAThreeActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butAThreeActionPerformed
+    {//GEN-HEADEREND:event_butAThreeActionPerformed
+        // Load NexTopScreen with topix chosen
+        NexTopScreen tps = new NexTopScreen();
+        tps.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_butAThreeActionPerformed
+
+    private void butAfourActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butAfourActionPerformed
+    {//GEN-HEADEREND:event_butAfourActionPerformed
+        // Load NexTopScreen with topix chosen
+        NexTopScreen tps = new NexTopScreen();
+        tps.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_butAfourActionPerformed
 
     /**
      * @param args the command line arguments
@@ -97,5 +218,11 @@ public class QuizScreen extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton butAOne;
+    private javax.swing.JButton butAThree;
+    private javax.swing.JButton butATwo;
+    private javax.swing.JButton butAfour;
+    private javax.swing.JLabel labQue;
+    private javax.swing.JLabel labTimer;
     // End of variables declaration//GEN-END:variables
 }
