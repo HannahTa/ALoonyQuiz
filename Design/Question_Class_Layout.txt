@@ -1,0 +1,45 @@
+
+public static void questions(string topic)
+{
+	int rand = random() // Will return random numbers between 0 and 10
+	switch(topic)
+	{
+		case "Music":
+		music(rand);
+		break;
+	}
+}
+
+public static void music(int num)
+{
+	ArrayList questions = {
+	"Which Michael Jackson single sold over 6 million copies worldwide?"
+	};
+	
+	ArrayList answers = {
+	3
+	};
+
+	ArrayList as = {
+	"Thriller"
+	}
+	
+	ArrayList bs = {
+	"Beat it"
+	}
+	
+	ArrayList cs = {
+	"Billie Jean"
+	}
+	
+	ArrayList ds = {
+	"Say Say Say"
+	}
+	
+	question = questions.get(rand);
+	answer = answers.get(rand);
+	a = as.get(rand);
+	b = bs.get(rand);
+	c = cs.get(rand);
+	d = ds.get(rand);
+}

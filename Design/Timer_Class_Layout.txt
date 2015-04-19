@@ -1,0 +1,55 @@
+import java.util.Date;
+
+/**
+ * How long things take
+ */
+class Timer
+{
+    private static long startTime;
+    
+    public static void startTimer()
+    {
+        startTime = System.currentTimeMillis();
+    }
+
+    public static long readTimeTaken()
+    {
+        return System.currentTimeMillis() - startTime;
+    }
+
+    public static long getTimeInMills()
+    {
+        return System.currentTimeMillis();
+    }
+}
+
+public class Main
+{
+	int eTimer = 10;
+	
+    public static void main( String args[] )
+    {        
+        Timer.startTimer();
+        long timer = Timer.getTimeInMills();
+        long measureTime1;
+        long measureTime2;
+
+        long time = (eTimer * 1000); //There are 1000 milliseconds to a second 
+        measureTime1 = timer;
+        measureTime2 = timer;
+        boolean forever = true;
+
+        timer = Timer.getTimeInMills();
+        if(timer >= (measureTime2 + 1000))
+        {
+            eTimer--;
+			//Update GUI timer
+            measureTime2 = timer;
+        }
+        if(timer >= (measureTime1 + time)) //1000 milliseconds to a second
+        {
+			//Timer is done, return 5 (Because timer ran out)
+            forever = false;				
+		}
+    }
+}
