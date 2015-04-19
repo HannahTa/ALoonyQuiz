@@ -1,0 +1,14 @@
+
+
+class Global()
+{
+	public static string question;
+	public static int answer;
+	
+	public static string a;
+	public static string b;
+	public static string c;
+	public static string d;
+
+	public static int lives = 3;
+}
