@@ -14,6 +14,57 @@ import java.util.Random;
  */
 public class Question
 {
+    public static void topicSelect()
+    {
+        Random rn = new Random();
+        int rand = rn.nextInt(4);// Will return random numbers between 0 and 3
+        switch(rand)
+        {
+            case 0:
+            Global.topic1 = "Music";
+            Global.topic2 = "Music";
+            break;
+
+            case 1:
+            Global.topic1 = "Sport";
+            Global.topic2 = "Sport";
+            break;
+
+            case 2:
+            Global.topic1 = "History";
+            Global.topic2 = "History";
+            break;
+
+            case 3:
+            Global.topic1 = "Geography";
+            Global.topic2 = "Geography";
+            break;
+        }
+
+        while(Global.topic1.equals(Global.topic2))
+        {
+            rand = rn.nextInt(4);// Will return random numbers between 0 and 3
+            switch(rand)
+            {
+                case 0:
+                Global.topic2 = "Music";
+                break;
+
+                case 1:
+                Global.topic2 = "Sport";
+                break;
+
+                case 2:
+                Global.topic2 = "History";
+                break;
+
+                case 3:
+                Global.topic2 = "Geography";
+                break;
+            }
+        }
+    }
+    
     public static void questions(String topic)
     {
         Random rn = new Random();

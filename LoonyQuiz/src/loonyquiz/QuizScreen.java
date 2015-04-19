@@ -157,35 +157,76 @@ public class QuizScreen extends javax.swing.JFrame
     private void butAOneActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butAOneActionPerformed
     {//GEN-HEADEREND:event_butAOneActionPerformed
         // Load NexTopScreen with topix chosen
-        NexTopScreen tps = new NexTopScreen();
-        tps.setVisible(true);
-        this.dispose();
+        questionAnswered(1);
+        if (Global.lives > 0)
+        {
+           NexTopScreen tps = new NexTopScreen();
+            tps.setVisible(true);
+            this.dispose(); 
+        }
     }//GEN-LAST:event_butAOneActionPerformed
 
     private void butATwoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butATwoActionPerformed
     {//GEN-HEADEREND:event_butATwoActionPerformed
         // Load NexTopScreen with topix chosen
-        NexTopScreen tps = new NexTopScreen();
-        tps.setVisible(true);
-        this.dispose();
+        questionAnswered(2);
+        if (Global.lives > 0)
+        {
+            NexTopScreen tps = new NexTopScreen();
+            tps.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_butATwoActionPerformed
 
     private void butAThreeActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butAThreeActionPerformed
     {//GEN-HEADEREND:event_butAThreeActionPerformed
         // Load NexTopScreen with topix chosen
-        NexTopScreen tps = new NexTopScreen();
-        tps.setVisible(true);
-        this.dispose();
+        questionAnswered(3);
+        if (Global.lives > 0)
+        {
+            NexTopScreen tps = new NexTopScreen();
+            tps.setVisible(true);
+            this.dispose();
+        }
     }//GEN-LAST:event_butAThreeActionPerformed
 
     private void butAfourActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butAfourActionPerformed
     {//GEN-HEADEREND:event_butAfourActionPerformed
         // Load NexTopScreen with topix chosen
-        NexTopScreen tps = new NexTopScreen();
-        tps.setVisible(true);
-        this.dispose();
+        questionAnswered(4);
+        if (Global.lives > 0)
+        {
+            NexTopScreen tps = new NexTopScreen();
+            tps.setVisible(true);
+            this.dispose();
+        }
+        
     }//GEN-LAST:event_butAfourActionPerformed
 
+    public void questionAnswered(int player)
+    {
+        if(player == Global.answer)
+        {
+            Global.correct = "Correct!";
+        }
+        else
+        {
+            Global.correct = "Incorrect!";
+            Global.lives--;
+            endGame();
+        }
+    }
+    
+    public void endGame()
+    {
+        if(Global.lives == 0)
+        {
+            MainScreen ms = new MainScreen();
+            ms.setVisible(true);
+            this.dispose();// Load start screen
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */

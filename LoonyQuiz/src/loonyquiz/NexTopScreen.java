@@ -11,13 +11,17 @@ package loonyquiz;
  */
 public class NexTopScreen extends javax.swing.JFrame
 {
-
     /**
      * Creates new form NexTopScreen
      */
     public NexTopScreen()
     {
         initComponents();
+        Question.topicSelect();
+        labCorrect.setText(Global.correct);
+        butTopOne.setText(Global.topic1);
+        butTopTwo.setText(Global.topic2);
+        labLives.setText(String.valueOf(Global.lives));
     }
 
     /**
@@ -46,7 +50,9 @@ public class NexTopScreen extends javax.swing.JFrame
         labCorrect.setText("Correct?");
 
         labLives.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        labLives.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         labLives.setText("LivesLeft");
+        labLives.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
 
         butTopTwo.setText("Topic2");
         butTopTwo.setMaximumSize(new java.awt.Dimension(125, 65));
@@ -80,39 +86,36 @@ public class NexTopScreen extends javax.swing.JFrame
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addComponent(butTopOne, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(butTopTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(labNextTop)
-                .addGap(109, 109, 109))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
-                        .addComponent(labLives))
+                        .addGap(41, 41, 41)
+                        .addComponent(butTopOne, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46)
+                        .addComponent(butTopTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(labCorrect)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(109, 109, 109)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labCorrect, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labNextTop))))
+                .addGap(41, 41, 41))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(labLives)
+                .addGap(141, 141, 141))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(58, 58, 58)
+                .addGap(59, 59, 59)
                 .addComponent(labCorrect)
-                .addGap(45, 45, 45)
+                .addGap(41, 41, 41)
                 .addComponent(labNextTop)
-                .addGap(47, 47, 47)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(butTopOne, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(butTopTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(72, 72, 72)
+                .addGap(75, 75, 75)
                 .addComponent(labLives)
-                .addContainerGap(109, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
 
         pack();
@@ -121,7 +124,7 @@ public class NexTopScreen extends javax.swing.JFrame
     private void butTopOneActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butTopOneActionPerformed
     {//GEN-HEADEREND:event_butTopOneActionPerformed
         // Load QuizScreen with topix chosen
-        Question.questions("Music");
+        Question.questions(Global.topic1);
         QuizScreen qs = new QuizScreen();
         qs.setVisible(true);
         this.dispose();
@@ -130,11 +133,12 @@ public class NexTopScreen extends javax.swing.JFrame
     private void butTopTwoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butTopTwoActionPerformed
     {//GEN-HEADEREND:event_butTopTwoActionPerformed
         // Load QuizScreen with topix chosen
+        Question.questions(Global.topic2);
         QuizScreen qs = new QuizScreen();
         qs.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_butTopTwoActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */

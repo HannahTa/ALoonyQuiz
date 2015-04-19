@@ -20,8 +20,9 @@ public class TopicScreen extends javax.swing.JFrame
     public TopicScreen()
     {
         initComponents();
-        butTopOne.setText("Music");
-        butTopTwo.setText("Sport");
+        Question.topicSelect();
+        butTopOne.setText(Global.topic1);
+        butTopTwo.setText(Global.topic2);
     }
 
     /**
@@ -131,7 +132,7 @@ public class TopicScreen extends javax.swing.JFrame
     private void butTopOneActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butTopOneActionPerformed
     {//GEN-HEADEREND:event_butTopOneActionPerformed
         // Load QuizScreen with topic chosen
-        Question.questions("Music");
+        Question.questions(Global.topic1);
         QuizScreen qs = new QuizScreen();
         qs.setVisible(true);
         this.dispose();
@@ -140,6 +141,7 @@ public class TopicScreen extends javax.swing.JFrame
     private void butTopTwoActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butTopTwoActionPerformed
     {//GEN-HEADEREND:event_butTopTwoActionPerformed
         // Load QuizScreen with topix chosen
+        Question.questions(Global.topic2);
         QuizScreen qs = new QuizScreen();
         qs.setVisible(true);
         this.dispose();

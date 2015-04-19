@@ -19,5 +19,9 @@ public class Global
     public static String c;
     public static String d;
 
+    public static String topic1;
+    public static String topic2;
+
+    public static String correct;
     public static int lives = 3;
 }

@@ -18,6 +18,15 @@ public class MainScreen extends javax.swing.JFrame
     public MainScreen()
     {
         initComponents();
+        if(Global.lives == 0)
+        {
+            labLoonQuiz.setText("Game Over!");
+        }
+        else
+        {
+            labLoonQuiz.setText("The Loony Quiz");
+        }
+        
     }
 
     /**
@@ -83,6 +92,7 @@ public class MainScreen extends javax.swing.JFrame
     private void butStartActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butStartActionPerformed
     {//GEN-HEADEREND:event_butStartActionPerformed
         //Load Topics
+        Global.lives = 3;
         TopicScreen ts = new TopicScreen();
         ts.setVisible(true);
         this.dispose();
