@@ -27,7 +27,7 @@ public class Timer
 {
     static int eTimer = 10;
     
-    public static void main( String args[] )
+    public static void runTime()
     {        
         Time.startTimer();
         long timer = Time.getTimeInMills();
@@ -40,6 +40,9 @@ public class Timer
         
         while(eTimer != 0)
         {
+		
+			// Read inputs from buttons (If that is how it works)
+		
             timer = Time.getTimeInMills();
             if(timer >= (measureTime2 + 1000))
             {
@@ -50,6 +53,9 @@ public class Timer
             if(timer >= (measureTime1 + time)) //1000 milliseconds to a second
             {
                 //Timer is done, return 5 (Because user ran out of time)
+				
+				// questionAnswered(5);   This is a method which checks if the answer was right
+				
                 forever = false;                
             }
         }
