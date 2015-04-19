@@ -1,45 +1,155 @@
+import java.util.ArrayList; 
+import java.util.Random;
 
-public static void questions(string topic)
+public class Main 
 {
-	int rand = random() // Will return random numbers between 0 and 10
-	switch(topic)
-	{
-		case "Music":
-		music(rand);
-		break;
-	}
-}
+    
+    public static void questions(String topic)
+    {
+        Random rn = new Random();
+        int rand = rn.nextInt(11);// Will return random numbers between 0 and 10
+        
+        switch(topic)
+        {
+            case "Music":
+            music(rand);
+            break;
+			
+			case "Sport":
+            sport(rand);
+            break;
+			
+			case "History":
+            history(rand);
+            break;
+			
+			case "Geography":
+            geography(rand);
+            break;
+        }
+    }
 
-public static void music(int num)
-{
-	ArrayList questions = {
-	"Which Michael Jackson single sold over 6 million copies worldwide?"
-	};
-	
-	ArrayList answers = {
-	3
-	};
+    public static void music(int num)
+    {
+        ArrayList<String> questions = new ArrayList<>();
+        questions.add("Which Michael Jackson single sold over 6 million copies worldwide?");
 
-	ArrayList as = {
-	"Thriller"
-	}
-	
-	ArrayList bs = {
-	"Beat it"
-	}
-	
-	ArrayList cs = {
-	"Billie Jean"
-	}
-	
-	ArrayList ds = {
-	"Say Say Say"
-	}
-	
-	question = questions.get(rand);
-	answer = answers.get(rand);
-	a = as.get(rand);
-	b = bs.get(rand);
-	c = cs.get(rand);
-	d = ds.get(rand);
+        ArrayList<Integer> answers = new ArrayList<>();
+        answers.add(3);
+
+        ArrayList<String> as = new ArrayList<>();
+        as.add("Thriller");
+
+        ArrayList<String> bs = new ArrayList<>();
+        bs.add("Beat it");
+
+        ArrayList<String> cs = new ArrayList<>();
+        cs.add("Billie Jean");
+
+        ArrayList<String> ds = new ArrayList<>();
+        ds.add("Say Say Say");
+
+        question = questions.get(num);
+        answer = answers.get(num);
+        a = as.get(num);
+        b = bs.get(num);
+        c = cs.get(num);
+        d = ds.get(num);
+    }
+    
+    public static void sport(int num)
+    {
+        ArrayList<String> questions = new ArrayList<>();
+        questions.add("Which European team won the FIFA 1966 world cup?");
+
+        ArrayList<Integer> answers = new ArrayList<>();
+        answers.add(2);
+
+        ArrayList<String> as = new ArrayList<>();
+        as.add("Germany");
+
+        ArrayList<String> bs = new ArrayList<>();
+        bs.add("England");
+
+        ArrayList<String> cs = new ArrayList<>();
+        cs.add("Spain");
+
+        ArrayList<String> ds = new ArrayList<>();
+        ds.add("Italy");
+
+        question = questions.get(num);
+        answer = answers.get(num);
+        a = as.get(num);
+        b = bs.get(num);
+        c = cs.get(num);
+        d = ds.get(num);
+    }
+    
+    public static void history(int num)
+    {
+        ArrayList<String> questions = new ArrayList<>();
+        questions.add("What was the name of the famous battle in 1066?");
+
+        ArrayList<Integer> answers = new ArrayList<>();
+        answers.add(4);
+
+        ArrayList<String> as = new ArrayList<>();
+        as.add("The Battle of France");
+
+        ArrayList<String> bs = new ArrayList<>();
+        bs.add("The Battle of Sweden");
+
+        ArrayList<String> cs = new ArrayList<>();
+        cs.add("The Battle of Ikea");
+
+        ArrayList<String> ds = new ArrayList<>();
+        ds.add("The Battle of Hastings");
+
+        question = questions.get(num);
+        answer = answers.get(num);
+        a = as.get(num);
+        b = bs.get(num);
+        c = cs.get(num);
+        d = ds.get(num);
+    }
+    
+    public static void geography(int num)
+    {
+        ArrayList<String> questions = new ArrayList<>();
+        questions.add("What is the capital of Poland?");
+        questions.add("What is the capital of Australia?");
+		questions.add("Which of these is not a south American country?");
+
+        ArrayList<Integer> answers = new ArrayList<>();
+        answers.add(2);
+        answers.add(3);
+		answers.add(1);
+
+        ArrayList<String> as = new ArrayList<>();
+        as.add("Paris");
+        as.add("Sydney");
+		as.add("Portugal");
+
+        ArrayList<String> bs = new ArrayList<>();
+        bs.add("Warsaw");
+        bs.add("Melbourne");
+		as.add("Argentina");
+
+        ArrayList<String> cs = new ArrayList<>();
+        cs.add("Cairo");
+        cs.add("Canberra");
+		as.add("Chile");
+
+        ArrayList<String> ds = new ArrayList<>();
+        ds.add("Bern");
+        ds.add("Brisbane");
+		as.add("Brazil");
+
+        question = questions.get(num);
+        answer = answers.get(num);
+        a = as.get(num);
+        b = bs.get(num);
+        c = cs.get(num);
+        d = ds.get(num);
+    }
 }
