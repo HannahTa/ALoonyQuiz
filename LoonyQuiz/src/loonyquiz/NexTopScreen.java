@@ -121,6 +121,7 @@ public class NexTopScreen extends javax.swing.JFrame
     private void butTopOneActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butTopOneActionPerformed
     {//GEN-HEADEREND:event_butTopOneActionPerformed
         // Load QuizScreen with topix chosen
+        Question.questions("Music");
         QuizScreen qs = new QuizScreen();
         qs.setVisible(true);
         this.dispose();
