@@ -41,7 +41,6 @@ public class NexTopScreen extends javax.swing.JFrame
         setBackground(new java.awt.Color(255, 255, 255));
         setMaximumSize(new java.awt.Dimension(380, 500));
         setMinimumSize(new java.awt.Dimension(380, 500));
-        setPreferredSize(new java.awt.Dimension(380, 500));
 
         labCorrect.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         labCorrect.setText("Correct?");
