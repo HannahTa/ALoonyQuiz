@@ -5,6 +5,8 @@
  */
 package loonyquiz;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Hannah
@@ -18,6 +20,11 @@ public class QuizScreen extends javax.swing.JFrame
     public QuizScreen()
     {
         initComponents();
+        butAOne.setText(Global.a);
+        butATwo.setText(Global.b);
+        butAThree.setText(Global.c);
+        butAfour.setText(Global.d);
+        labQue.setText(Global.question);
     }
 
     /**

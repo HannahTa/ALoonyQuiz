@@ -5,6 +5,8 @@
  */
 package loonyquiz;
 
+import javax.swing.JButton;
+
 /**
  *
  * @author Hannah
@@ -18,6 +20,8 @@ public class TopicScreen extends javax.swing.JFrame
     public TopicScreen()
     {
         initComponents();
+        butTopOne.setText("Music");
+        butTopTwo.setText("Sport");
     }
 
     /**
@@ -127,6 +131,7 @@ public class TopicScreen extends javax.swing.JFrame
     private void butTopOneActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_butTopOneActionPerformed
     {//GEN-HEADEREND:event_butTopOneActionPerformed
         // Load QuizScreen with topic chosen
+        Question.questions("Music");
         QuizScreen qs = new QuizScreen();
         qs.setVisible(true);
         this.dispose();
@@ -139,7 +144,7 @@ public class TopicScreen extends javax.swing.JFrame
         qs.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_butTopTwoActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */
@@ -181,6 +186,7 @@ public class TopicScreen extends javax.swing.JFrame
             public void run()
             {
                 new TopicScreen().setVisible(true);
+                
             }
         });
     }
