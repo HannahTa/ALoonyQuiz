@@ -10,5 +10,9 @@ class Global()
 	public static string c;
 	public static string d;
 
+	public static string topic1;
+	public static string topic2;
+
+	public static string correct;
 	public static int lives = 3;
 }

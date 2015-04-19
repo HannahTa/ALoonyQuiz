@@ -34,9 +34,8 @@ public class Timer
         long measureTime1, measureTime2;
 
         long time = (eTimer * 1000); //There are 1000 milliseconds to a second 
-        measureTime1 = timer;
-        measureTime2 = timer;
-        boolean forever = true;
+        measureTime1 = timer;  // For measuring a second
+        measureTime2 = timer;  // For measuring the ten seconds
         
         while(eTimer != 0)
         {
@@ -44,20 +43,37 @@ public class Timer
 			// Read inputs from buttons (If that is how it works)
 		
             timer = Time.getTimeInMills();
-            if(timer >= (measureTime2 + 1000))
+            if(timer >= (measureTime2 + 1000))  // Checks how long a second has passed
             {
                 eTimer--;
                 // Edit GUI Timer 
                 measureTime2 = timer;
             }
-            if(timer >= (measureTime1 + time)) //1000 milliseconds to a second
+            if(timer >= (measureTime1 + time)) // Checks if eTimer (10 seconds) has passed
             {
                 //Timer is done, return 5 (Because user ran out of time)
 				
 				// questionAnswered(5);   This is a method which checks if the answer was right
-				
-                forever = false;                
+              
             }
         }
     }
+}
+
+// For Quiz Form Class
+public void questionAnswered(int player)
+{
+	if(player == answer)
+	{
+		Global.correct = "Correct!";
+	}
+	else
+	{
+		Global.correct = "Incorrect!";
+		Global.lives--;
+	}
+	
+	// Unload current form
+	// Load topic form
+	// Redo and select topics
 }
