@@ -1,0 +1,113 @@
+//Music
+questions.add("Which band released a song for the League of Legends LCS?");
+questions.add("Which of these is a female song artist?");
+questions.add("Who is the lead singer of Paramore?");
+questions.add("What Scissor Sisters song was featured in a Doctor Who Christmas episode?");
+questions.add("Which of these was sung by a cat and a donkey?")
+
+answers.add(1);
+answers.add(4);
+answers.add(3);
+answers.add(2);
+answers.add(1);
+
+as.add("Imagine Dragons");
+as.add("Green");
+as.add("Adam Levine");
+as.add("Take Your Mama Out");
+as.add("Livin' La Vida Loca");
+
+bs.add("Imagine Butterflies");
+bs.add("Yellow");
+bs.add("Mark Owen");
+bs.add("I Can't Decide");
+bs.add("I Need A Hero");
+
+cs.add("Imagine Rainbows");
+cs.add("Red");
+cs.add("Hayley Williams");
+cs.add("I Don't Feel Like Dancing");
+cs.add("Funkey Town");
+
+ds.add("Imagination");
+ds.add("Pink");
+ds.add("Ana Matronic");
+ds.add("Night Life")
+ds.add("Changes");
+
+//Sport
+questions.add("Which famous footballer now advertises walkers crisps?");
+
+
+answers.add(3);
+
+
+as.add("Michael Owen");
+
+
+bs.add("David Beckham");
+
+
+cs.add("Gary Lineker");
+
+
+ds.add("Cristiano Ronaldo");
+
+
+// History
+questions.add("What year did World War 2 begin?");
+questions.add("When was the Great Wall of China built?");
+questions.add("What year was America discovered?");
+questions.add("Who was the ringleader of the Gunpowder Plot of 1605?")
+questions.add("Who was the shortest-reigning English monarch?")
+
+answers.add(3);
+answers.add(1);
+answers.add(2);
+answers.add(3);
+answers.add(4);
+
+as.add("1938");
+as.add("221 BC");
+as.add("1490");
+as.add("Robert Smith");
+as.add("William the Conqueror");
+
+bs.add("1941");
+bs.add("121 BC");
+bs.add("1492");
+bs.add("Sir Reginald Everett");
+bs.add("Alexander III");
+
+cs.add("1939");
+cs.add("121 AD");
+cs.add("1494");
+cs.add("Guy Fawkes");
+cs.add("George I");
+
+ds.add("1942");
+ds.add("221 AD");
+ds.add("1496");
+ds.add("None of the Above");
+ds.add("Lady Jane Grey");
+
+// Geography
+questions.add("What is capital of China?");
+questions.add("Which of these countries is not part of Europe");
+
+answers.add(1);
+answers.add(3);
+
+as.add("Beijing");
+as.add("Croatia");
+
+bs.add("Hong Kong");
+bs.add("Albania");
+
+cs.add("Chengdu");
+cs.add("Tunisia");
+
+ds.add("Shanghai");
+ds.add("Malta");
+
+
